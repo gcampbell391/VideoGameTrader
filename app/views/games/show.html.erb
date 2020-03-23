@@ -1,0 +1,23 @@
+<h1><%= @game.title %> </h1>
+<% if @game.rating > 7.9 %>
+    <h3>is currently one of the hottest games!</h3>
+<% end %>
+
+<ul>
+    <li>Genre: <%= @game.genre %></li>
+    <li>Released Date: <%= @game.release_year %></li>
+    <li>Rating: <%= @game.rating %></li>
+    <li>Completion Time: <%= @game.completion_time %> hours</li>
+</ul>
+
+<h3>Platform(s)</h3>
+<% if @game.video_game_platforms %>
+    <% @game.video_game_platforms.each do |vgp|%>
+        <h3>Currently Available for: </h3>
+        <ul>
+            <li><%= vgp.platform.name %> </li>
+        </ul>
+        <% end %>
+<% end %>
+
+<%= button_to "All Games", games_path, method: :get %>

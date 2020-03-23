@@ -1,0 +1,23 @@
+<h1>Sign Up Today</h1>
+<%= form_for(@user) do |f| %>
+
+    <%= f.label :name %><br>
+    <%= f.text_field :name%><br>
+    
+    <%= f.label :user_name %><br>
+    <%= f.text_field :user_name %><br>
+
+    <%= f.label :password %><br>
+    <%= f.text_field :password %><br>
+
+    <%= f.label :password_confirmation %><br>
+    <%= f.text_field :password_confirmation %><br>
+
+    <%= f.label :address %><br>
+    <%= f.text_field :address %><br>
+
+    <%= f.label :email %><br>
+    <%= f.text_field :email %><br><br >
+    
+    <%= f.submit %>
+    <% end %>

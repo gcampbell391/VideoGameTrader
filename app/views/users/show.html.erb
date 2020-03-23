@@ -1,0 +1,19 @@
+<h1>Welcome, <%= @user.user_name %> </h1>
+
+<h3>Personal Info</h3>
+<ul>
+    <li>Name: <%= @user.name %></li>
+    <li>Address: <%= @user.address %></li>
+    <li>Email: <%= @user.email %></li>
+</ul>
+<%= button_to "Edit Info", "/users/#{@user.id}/edit", method: :get %>
+
+<h3><%= @user.name %> owns this many games: <%= @user.video_game_count %></h3>
+<% if @user.user_video_games %>
+    <h3>Current Collection</h3>
+    <ul>
+    <% @user.user_video_games.each do |uvg|%>
+        <li><%= link_to uvg.game.title, "/games/#{uvg.game.id}" %> </li><br>
+<% end%>
+    </ul>
+<% end %>

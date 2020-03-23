@@ -1,0 +1,19 @@
+<h1>All Games</h1>
+<table style="width:100%">
+    <tr>
+        <th>Title</th>
+        <th>Genre</th>
+        <th>Released Date</th>
+        <th>Rating</th>
+        <th>Completion Time</th>
+    </tr>
+    <% @games.each do |game| %>
+    <tr>
+        <td><%= link_to game.title, "/games/#{game.id}"%> </td>
+        <td><%= game.genre %> </td>
+        <td><%= game.release_year %> </td>
+        <td><%= game.rating %></td>
+        <td><%= game.completion_time %> hours</td>
+    </tr>
+    <% end %>
+</table>
