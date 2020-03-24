@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-
+resource :users 
+resource :games
+resource :platforms
   #Shows all games and single game pages 
   get '/games', to: 'games#index'
   get '/games/:id', to: 'games#show'
