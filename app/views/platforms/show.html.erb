@@ -1,0 +1,11 @@
+<h1><%= @platform.name%> Home Page</h1>
+
+<h3>platform Users</h3>
+ <ul>
+    <% @platform.user_platforms.each do |up|%>
+        <li><%= link_to up.user.name, "/users/#{up.user.id}" %> </li><br>
+<% end%>
+    </ul>
+
+    <%= button_to "All Platforms", platforms_path, method: :get %>
+

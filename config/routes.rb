@@ -17,4 +17,10 @@ Rails.application.routes.draw do
   #Login page for existing users 
 
 
+
+  #platform show
+  get '/platforms', to: 'platforms#index'
+  get '/platforms/:id', to: 'platforms#show'
+
+
 end
