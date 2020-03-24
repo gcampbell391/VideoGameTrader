@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get '/users/:id', to: 'users#show'
   get '/users/:id/edit', to: 'users#edit'
   patch '/users/:id', to: 'users#update'
+  delete '/users/:id/destroy', to: 'users#destroy' 
 
 
   #Add game to user 
@@ -34,6 +35,8 @@ Rails.application.routes.draw do
   #platform show
   get '/platforms', to: 'platforms#index'
   get '/platforms/:id', to: 'platforms#show'
+  get "/:id/addplatform", to: 'platforms#new'
+  post "/:id/platformadded", to: 'platforms#create'
 
 
 end

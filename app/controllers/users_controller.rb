@@ -28,6 +28,12 @@ class UsersController < ApplicationController
         redirect_to "/users/#{@user.id}"
     end
 
+    def destroy
+        @user = User.find(params[:id])
+        @user.destroy
+        redirect_to "/welcome"
+    end 
+
 
     private 
     

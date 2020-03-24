@@ -7,9 +7,12 @@
     <li>Email: <%= @user.email %></li>
 </ul>
 <%= button_to "Edit Info", "/users/#{@user.id}/edit", method: :get %><br>
+<%= button_to "Destroy Account", "/users/#{@user.id}/destroy", method: :delete %><br>
 <%= button_to "All Games", "/games", method: :get %><br>
 <%= button_to "Looking For Trades?", "/users/all", method: :get %><br>
-<%= button_to "Add Game", "/#{@user.id}/addgame", method: :get %> 
+<%= button_to "Add Game", "/#{@user.id}/addgame", method: :get %> <br>
+<%= button_to "All Platforms", "/platforms/", method: :get %><br>
+<%= button_to "Add Platform", "/#{@user.id}/addplatform", method: :get %>
 <h3><%= @user.name %> owns this many games: <%= @user.video_game_count %></h3>
 <% if @user.user_video_games %>
     <h3>Current Collection</h3>
@@ -22,3 +25,13 @@
 <% end%>
     </ul>
 <% end %>
+<h3><%= @user.name %> owns this many platforms: <%= @user.platform_count %></h3>
+<% if @user.user_platforms %>
+<h3>Owned platforms </h3>
+    <ul>
+    <% @user.user_platforms.each do |up|%>
+        <li><%= link_to up.platform.name, "/platforms/#{up.platform.id}" %><br>
+<% end%>
+    </ul>
+<% end %>
+

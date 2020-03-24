@@ -7,7 +7,7 @@ class Game < ApplicationRecord
 
 
     def self.highest_rating
-        @game = Game.find(Game.maximum('rating'))
+        @game = Game.find_by(rating: Game.maximum('rating'))
         return @game.title
     end
 

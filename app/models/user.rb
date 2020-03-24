@@ -30,6 +30,10 @@ class User < ApplicationRecord
         return false 
     end
 
+    def platform_count 
+        self.user_platforms.count
+    end
+
 
 
 end
