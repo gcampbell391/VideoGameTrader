@@ -1,5 +1,6 @@
 <h1>All Users Looking to Trade</h1>
 <h2>Our Current Top Gamer: <%= User.biggest_gamer %></h2>
+<%= button_to 'Home', "/users/#{session[:user_id]}", method: :get %>
 <% @users.each do |user| %>
     <% if user.wants_to_trade == true %>
         <p><%=link_to user.name, "/users/#{user.id}" %></p>

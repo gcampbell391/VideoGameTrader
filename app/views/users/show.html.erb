@@ -1,4 +1,4 @@
-<h1>Welcome, <%= @user.user_name %> </h1>
+<h1>Welcome <%= @user.user_name %> </h1>
 
 <h3>Personal Info</h3>
 <ul>
@@ -8,12 +8,13 @@
 </ul>
 <%= button_to "Edit Info", "/users/#{@user.id}/edit", method: :get %><br>
 <%= button_to "Destroy Account", "/users/#{@user.id}/destroy", method: :delete %><br>
-<%= button_to "All Games", "/games", method: :get %><br>
-<%= button_to "Looking For Trades?", "/users/all", method: :get %><br>
-<%= button_to "Add Game", "/#{@user.id}/addgame", method: :get %> <br>
-<%= button_to "All Platforms", "/platforms/", method: :get %><br>
-<%= button_to "Add Platform", "/#{@user.id}/addplatform", method: :get %>
+<%= button_to "Log Out", "/logout", method: :get %>
+
 <h3><%= @user.name %> owns this many games: <%= @user.video_game_count %></h3>
+<%= button_to "All Games", "/games", method: :get %><br>
+<%= button_to "Add Game", "/#{@user.id}/addgame", method: :get %> <br>
+<%= button_to "Remove Game", "/#{@user.id}/removegame", method: :get %>
+
 <% if @user.user_video_games %>
     <h3>Current Collection</h3>
     <ul>
@@ -25,13 +26,22 @@
 <% end%>
     </ul>
 <% end %>
+<%= button_to "Looking For Trades?", "/users/all", method: :get %><br>
+
 <h3><%= @user.name %> owns this many platforms: <%= @user.platform_count %></h3>
+
+<%= button_to "All Platforms", "/platforms/", method: :get %><br>
+<%= button_to "Add Platform", "/#{@user.id}/addplatform", method: :get %><br>
+<%= button_to "Remove Platform", "/#{@user.id}/removeplatform", method: :get %>
+
 <% if @user.user_platforms %>
 <h3>Owned platforms </h3>
     <ul>
     <% @user.user_platforms.each do |up|%>
-        <li><%= link_to up.platform.name, "/platforms/#{up.platform.id}" %><br>
+        <li><%= link_to up.platform.name, "/platforms/#{up.platform.id}" %><br><br>
 <% end%>
     </ul>
 <% end %>
+
+
 

@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    skip_before_action :authorized, only: [:new, :create]
 
     def index 
         @users = User.all
@@ -34,6 +35,30 @@ class UsersController < ApplicationController
         redirect_to "/welcome"
     end 
 
+    def logout
+        reset_session
+        redirect_to "/welcome"
+    end
+
+
+    def trade 
+
+        @user1 = User.find(session[:user_id])
+        session[:user2] = User.find(params[:id])
+        @user2 = session[:user2]
+        session[:game2] = Game.find_by(title: params[:title])
+        render :trade
+    end
+
+    def complete_trade 
+        @first_users_game = UserVideoGame.find_by(user_id: session[:user_id], game_id: params[:user_video_games][:game_id])
+        @second_users_game = UserVideoGame.find_by(user_id: session[:user2]["id"], game_id: session[:game2]["id"])
+        @user1_new_game = UserVideoGame.create(user_id: session[:user_id], game_id: session[:game2]["id"])
+        @user2_new_game = UserVideoGame.create(user_id: session[:user2]["id"], game_id: params[:user_video_games][:game_id])
+        @first_users_game.destroy
+        @second_users_game.destroy
+        redirect_to "/users/#{session[:user_id]}"
+    end 
 
     private 
     

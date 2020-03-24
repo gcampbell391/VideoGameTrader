@@ -8,6 +8,16 @@ class PlatformsController < ApplicationController
         @platform = Platform.find(params[:id])
     end
 
+    def edit 
+        @user = User.find(params[:id])
+    end
+
+    def delete 
+        @user_platform = UserPlatform.find_by(user_id: session[:user_id], platform_id: params[:user_platform][:platform_id])
+        @user_platform.destroy
+        redirect_to "/users/#{session[:user_id]}"
+    end
+
 
     def new
         @platform = Platform.new
@@ -21,7 +31,4 @@ class PlatformsController < ApplicationController
     end 
     
 
-    # @user = User.find(params[:id])
-    # @user_game = UserVideoGame.create(user_id: @user.id, game_id: params[:user_video_game][:game], tradeable: params[:user_video_game][:tradeable] )
-    # redirect_to "/users/#{@user.id}"
 end

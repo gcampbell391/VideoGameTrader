@@ -1,0 +1,7 @@
+<h1>Trades Game with <%= @user2.name %></h1>
+
+<%= form_tag("/finalizetrade/", method: "post") do %>
+<label>Select the game you would like to trade: </label>
+<%= collection_select :user_video_games, :game_id, @user1.games, :id, :title %> <br><br>
+<%= submit_tag("Trade Game") %><br>
+<% end %>

@@ -17,4 +17,14 @@ class GamesController < ApplicationController
     def show 
         @game = Game.find(params[:id])
     end
+
+    def edit 
+        @user = User.find(params[:id])
+    end
+
+    def delete 
+        @user_game = UserVideoGame.find_by(user_id: session[:user_id], game_id: params[:user_video_games][:game_id])
+        @user_game.destroy
+        redirect_to "/users/#{session[:user_id]}"
+    end
 end

@@ -36,4 +36,14 @@ class Game < ApplicationRecord
         return @game.title
     end
     
+
+    def tradeable_owners 
+        newArray = []
+        self.user_video_games.each do |uvg|
+            if uvg.tradeable == true
+                newArray << uvg.user
+            end 
+        end
+        newArray
+    end
 end 

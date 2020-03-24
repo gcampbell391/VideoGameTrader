@@ -34,6 +34,21 @@ class User < ApplicationRecord
         self.user_platforms.count
     end
 
+    def platforms 
+        newArray = []
+        self.user_platforms.each do |user_platform|
+            newArray << user_platform.platform
+        end
+        newArray
+    end
 
+    def games 
+        newArray = []
+        self.user_video_games.each do |uvg|
+            newArray << uvg.game
+        end
+        newArray
+    end
 
+    
 end

@@ -38,5 +38,18 @@ Rails.application.routes.draw do
   get "/:id/addplatform", to: 'platforms#new'
   post "/:id/platformadded", to: 'platforms#create'
 
+  #Delete a user platform
+  get "/:id/removeplatform", to: 'platforms#edit'
+  post "/deleteplatform", to: 'platforms#delete'
 
+  #Delete a user game
+  get "/:id/removegame", to: 'games#edit'
+  post "/deletegame", to: 'games#delete'
+
+  #Allows a User to logout 
+  get "/logout", to: 'users#logout'
+
+  #Trade game
+  get "/tradegame/:title/:id", to: 'users#trade'
+  post "/finalizetrade", to: 'users#complete_trade'
 end
