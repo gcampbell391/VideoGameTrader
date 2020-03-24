@@ -6,14 +6,19 @@
     <li>Address: <%= @user.address %></li>
     <li>Email: <%= @user.email %></li>
 </ul>
-<%= button_to "Edit Info", "/users/#{@user.id}/edit", method: :get %>
-
+<%= button_to "Edit Info", "/users/#{@user.id}/edit", method: :get %><br>
+<%= button_to "All Games", "/games", method: :get %><br>
+<%= button_to "Looking For Trades?", "/users/all", method: :get %><br>
+<%= button_to "Add Game", "/#{@user.id}/addgame", method: :get %> 
 <h3><%= @user.name %> owns this many games: <%= @user.video_game_count %></h3>
 <% if @user.user_video_games %>
     <h3>Current Collection</h3>
     <ul>
     <% @user.user_video_games.each do |uvg|%>
-        <li><%= link_to uvg.game.title, "/games/#{uvg.game.id}" %> </li><br>
+        <li><%= link_to uvg.game.title, "/games/#{uvg.game.id}" %><br>
+            <ul>
+                <li>Up For Trade? <%= uvg.yes_or_no %></li><br>
+            </ul>
 <% end%>
     </ul>
 <% end %>

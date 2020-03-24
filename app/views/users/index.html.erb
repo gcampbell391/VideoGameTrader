@@ -1,0 +1,14 @@
+<h1>All Users Looking to Trade</h1>
+<h2>Our Current Top Gamer: <%= User.biggest_gamer %></h2>
+<% @users.each do |user| %>
+    <% if user.wants_to_trade == true %>
+        <p><%=link_to user.name, "/users/#{user.id}" %></p>
+        <ul>
+            <% user.user_video_games.each do |uvg| %>
+                <% if uvg.tradeable == true %>
+                    <li><%=link_to uvg.game.title, "/games/#{uvg.game.id}" %></li>
+                    <% end %>
+            <% end %>
+        </ul>
+    <% end %>
+<% end %>

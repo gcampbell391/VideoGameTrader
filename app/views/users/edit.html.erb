@@ -1,5 +1,5 @@
 <h1>Edit <%= @user.name %>'s Personal Information</h1>
-<%= form_for(@user) do |f| %>
+<%= form_for(@user, url: "/users/#{@user.id}") do |f| %>
 
     <%= f.label :name %><br>
     <%= f.text_field :name%><br>

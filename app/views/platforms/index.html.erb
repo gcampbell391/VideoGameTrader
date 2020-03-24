@@ -1,8 +1,8 @@
-<h3> All platforms </h3>
+<h1> All Platforms </h1>
 <ul>
 <% @platforms.each do |platform| %>
- <li> Platform Name:<%= link_to platform.name, "/platforms/#{platform.id}"%></li>
-  <li>Platform Release Date:<%=platform.release_year%></li>
- <li>Platform ID:<%=platform.id%></li>
+<h2><%= link_to platform.name, "/platforms/#{platform.id}"%></h2>
+<li>Released: <%= platform.release_year %></li>
+
 <%end%>
 </ul>

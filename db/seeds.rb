@@ -35,7 +35,7 @@ end
 puts "Creating User Video Games..."
 
 20.times do 
-    UserVideoGame.create(user_id: User.all.sample.id, game_id: Game.all.sample.id )
+    UserVideoGame.create(user_id: User.all.sample.id, game_id: Game.all.sample.id, tradeable: false  )
 end
 
 puts "Creating User Platforms..."
@@ -47,6 +47,6 @@ end
 puts "Creating Platform Video Games..."
 
 20.times do 
-    VideoGamePlatform.create(game_id: Game.all.sample.id, platform_id: Platform.all.sample.id, )
+    VideoGamePlatform.create(game_id: Game.all.sample.id, platform_id: Platform.all.sample.id)
 end
 puts "We're Durty..."

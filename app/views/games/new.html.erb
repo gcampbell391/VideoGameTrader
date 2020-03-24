@@ -1,0 +1,8 @@
+<h1>Add a Game to <%= @user.name %>'s Collection</h1>
+<%= form_for(@user_game, url: "/#{@user.id}/gameadded" ) do |f| %>
+<%= f.label :game_id %>
+<%= collection_select(:user_video_game, :game, Game.all, :id, :title) %><br><br>
+<%= f.label "Up for Trade?" %>
+<%= f.check_box :tradeable %><br><br>
+<%= f.submit %>
+<% end %>
