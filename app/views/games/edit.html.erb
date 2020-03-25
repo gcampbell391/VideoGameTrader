@@ -1,7 +1,9 @@
+<div class="headerbg">
 <h1>Remove Game for <%= @user.name %></h1>
+</div>
 <label>Select a game to be removed from your collection:</label><br><br>
 
 <%= form_tag("/deletegame", method: "post") do %>
 <%= collection_select :user_video_games, :game_id, @user.games, :id, :title %> <br><br>
-<%= submit_tag("Remove Game") %><br>
+<%= submit_tag("Remove Game", :class => "showbtn2")%><br>
 <% end %>

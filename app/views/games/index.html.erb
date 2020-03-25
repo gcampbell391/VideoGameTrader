@@ -1,8 +1,11 @@
+<div class="headerbg">
 <h1>Games Homepage</h1>
-<%= button_to 'Home', "/users/#{session[:user_id]}", method: :get %>
+</div>
+<%= button_to 'Home', "/users/#{session[:user_id]}",:class => "showbtn1", method: :get %>
 
+<div class="gameStats">
 <h3>Best Game: </h3>
-<%= Game.highest_rating %>
+<%= Game.highest_rating%>
 <h3>Worst Game: </h3>
 <%= Game.worst_rating %>
 <h3>Longest Game: </h3>
@@ -13,6 +16,7 @@
 <%= Game.newest %>
 <h3>Oldest Game: </h3>
 <%= Game.oldest %>
+</div>
 
 <h2>All Games</h2>
 

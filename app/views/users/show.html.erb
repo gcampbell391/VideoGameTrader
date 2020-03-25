@@ -1,4 +1,9 @@
+<div class="headerbg">
 <h1>Welcome <%= @user.user_name %> </h1>
+</div>
+
+<div class="showleftside">
+<%= image_tag "mod2image1.jpeg", class: 'showimage' %>
 
 <h3>Personal Info</h3>
 <ul>
@@ -6,14 +11,17 @@
     <li>Address: <%= @user.address %></li>
     <li>Email: <%= @user.email %></li>
 </ul>
-<%= button_to "Edit Info", "/users/#{@user.id}/edit", method: :get %><br>
-<%= button_to "Destroy Account", "/users/#{@user.id}/destroy", method: :delete %><br>
-<%= button_to "Log Out", "/logout", method: :get %>
+<%= button_to "Edit Info", "/users/#{@user.id}/edit",:class => "showbtn1", method: :get %><br>
+<%= button_to "Destroy Account", "/users/#{@user.id}/destroy",:class => "showbtn2", method: :delete %><br>
+<%= button_to "Log Out", "/logout",:class => "showbtn1", method: :get %>
+</div>
 
+
+<div class="showrightside">
 <h3><%= @user.name %> owns this many games: <%= @user.video_game_count %></h3>
-<%= button_to "All Games", "/games", method: :get %><br>
-<%= button_to "Add Game", "/#{@user.id}/addgame", method: :get %> <br>
-<%= button_to "Remove Game", "/#{@user.id}/removegame", method: :get %>
+<%= button_to "All Games", "/games",:class => "showbtn1", method: :get %><br>
+<%= button_to "Add Game", "/#{@user.id}/addgame",:class => "showbtn2", method: :get %> <br>
+<%= button_to "Remove Game", "/#{@user.id}/removegame",:class => "showbtn1", method: :get %>
 
 <% if @user.user_video_games %>
     <h3>Current Collection</h3>
@@ -26,13 +34,16 @@
 <% end%>
     </ul>
 <% end %>
-<%= button_to "Looking For Trades?", "/users/all", method: :get %><br>
+<%= button_to "Looking For Trades?", "/users/all",:class => "showbtn2", method: :get %><br>
+</div>
 
+
+<div class="showbottom">
 <h3><%= @user.name %> owns this many platforms: <%= @user.platform_count %></h3>
 
-<%= button_to "All Platforms", "/platforms/", method: :get %><br>
-<%= button_to "Add Platform", "/#{@user.id}/addplatform", method: :get %><br>
-<%= button_to "Remove Platform", "/#{@user.id}/removeplatform", method: :get %>
+<%= button_to "All Platforms", "/platforms/",:class => "showbtn1", method: :get %><br>
+<%= button_to "Add Platform", "/#{@user.id}/addplatform",:class => "showbtn2", method: :get %><br>
+<%= button_to "Remove Platform", "/#{@user.id}/removeplatform",:class => "showbtn1", method: :get %>
 
 <% if @user.user_platforms %>
 <h3>Owned platforms </h3>
@@ -42,6 +53,6 @@
 <% end%>
     </ul>
 <% end %>
-
+</div>
 
 

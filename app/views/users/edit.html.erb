@@ -1,4 +1,6 @@
+<div class="headerbg">
 <h1>Edit <%= @user.name %>'s Personal Information</h1>
+</div>
 <%= form_for(@user, url: "/users/#{@user.id}") do |f| %>
 
     <%= f.label :name %><br>
@@ -19,5 +21,5 @@
     <%= f.label :email %><br>
     <%= f.text_field :email %><br><br >
     
-    <%= f.submit %>
+    <%= f.submit "Update Info", :class => "showbtn2" %>
     <% end %>

@@ -1,15 +1,21 @@
+<div class="headerbg">
 <h1>All Users Looking to Trade</h1>
+</div>
 <h2>Our Current Top Gamer: <%= User.biggest_gamer %></h2>
-<%= button_to 'Home', "/users/#{session[:user_id]}", method: :get %>
+<%= button_to 'Home', "/users/#{session[:user_id]}",:class => "showbtn2", method: :get %>
+<div class="gametradebox">
 <% @users.each do |user| %>
     <% if user.wants_to_trade == true %>
-        <p><%=link_to user.name, "/users/#{user.id}" %></p>
+        <p>Name of User:<p>
+        <p><%=button_to user.name, "/users/#{user.id}",:class => "tradegames2", method: :get %></p>
         <ul>
+        <p>Available Games</p>>
             <% user.user_video_games.each do |uvg| %>
                 <% if uvg.tradeable == true %>
-                    <li><%=link_to uvg.game.title, "/games/#{uvg.game.id}" %></li>
+                    <li><%=button_to uvg.game.title, "/games/#{uvg.game.id}",:class => "tradegames", method: :get  %></li>
                     <% end %>
             <% end %>
         </ul>
     <% end %>
 <% end %>
+</div>

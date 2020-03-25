@@ -1,7 +1,9 @@
+<div class="headerbg">
 <h1>Remove Platform for <%= @user.name %></h1>
+</div>
 <label>Select a platform to be removed from your collection:</label><br><br>
 
 <%= form_tag("/deleteplatform", method: "post") do %>
 <%= collection_select :user_platform, :platform_id, @user.platforms, :id, :name %> <br><br>
-<%= submit_tag("Remove Platform") %><br>
+<%= submit_tag("Remove Platform", :class => "showbtn2") %><br>
 <% end %>

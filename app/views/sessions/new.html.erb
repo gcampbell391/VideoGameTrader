@@ -1,8 +1,10 @@
+<div class="headerbg">
 <h1>Existing User Log-In</h1>
+</div>
 <%= form_tag '/login' do %>
     <%= label_tag :user_name%><br>
     <%= text_field_tag :user_name %><br>
     <%= label_tag :password %><br>
     <%= password_field_tag :password %><br><br>
-    <%= submit_tag "Login"%>
+    <%= submit_tag "Login", :class => "loginbtn", method: :get%>
 <%end%>

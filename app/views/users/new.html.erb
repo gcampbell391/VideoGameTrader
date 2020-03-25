@@ -1,4 +1,6 @@
+<div class="headerbg">
 <h1>Sign Up Today</h1>
+</div>
 <%= form_for(@user) do |f| %>
 
     <%= f.label :name %><br>
@@ -19,5 +21,5 @@
     <%= f.label :email %><br>
     <%= f.text_field :email %><br><br >
     
-    <%= f.submit %>
+    <%= f.submit "Create Account", :class => "loginbtn" %>
     <% end %>

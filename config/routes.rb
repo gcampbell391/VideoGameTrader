@@ -23,14 +23,9 @@ Rails.application.routes.draw do
   patch '/users/:id', to: 'users#update'
   delete '/users/:id/destroy', to: 'users#destroy' 
 
-
   #Add game to user 
   get "/:id/addgame", to: 'games#new'
   post "/:id/gameadded", to: 'games#create'
-
-  #Login page for existing users 
-
-
 
   #platform show
   get '/platforms', to: 'platforms#index'

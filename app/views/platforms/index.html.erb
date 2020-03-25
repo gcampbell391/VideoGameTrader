@@ -1,9 +1,13 @@
+<div class="headerbg">
 <h1> All Platforms </h1>
-<%= button_to 'Home', "/users/#{session[:user_id]}", method: :get %>
+</div>
+<%= button_to 'Home', "/users/#{session[:user_id]}",:class => "showbtn2", method: :get  %>
 <ul>
 <% @platforms.each do |platform| %>
-<h2><%= link_to platform.name, "/platforms/#{platform.id}"%></h2>
+<h2><%= button_to platform.name, "/platforms/#{platform.id}", :class => "platformsbtn", method: :get%></h2>
+<div class= "platformtext">
 <li>Released: <%= platform.release_year %></li>
 
 <%end%>
+</div>
 </ul>
