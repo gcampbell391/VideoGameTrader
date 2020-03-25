@@ -1,7 +1,7 @@
 <div class="headerbg">
 <h1>Edit <%= @user.name %>'s Personal Information</h1>
 </div>
-<%= form_for(@user, url: "/users/#{@user.id}") do |f| %>
+<%= form_for(@user) do |f| %>
 
     <%= f.label :name %><br>
     <%= f.text_field :name%><br>

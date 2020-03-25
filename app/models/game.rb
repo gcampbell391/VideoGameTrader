@@ -5,6 +5,9 @@ class Game < ApplicationRecord
     has_many :platforms, through: :video_game_platforms
 
 
+    def self.total_games
+        Game.all.count
+    end
 
     def self.highest_rating
         @game = Game.find_by(rating: Game.maximum('rating'))

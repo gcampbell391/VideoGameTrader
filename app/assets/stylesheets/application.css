@@ -235,6 +235,13 @@
             float: left;
         }
         
+        caption {
+            color: white;
+            font-size: 30px;
+            padding-bottom: 10px;
+            animation: blinkingText 1.2s infinite;
+        }
+        
         .notice {
             padding-top: 20px;
             color: white;

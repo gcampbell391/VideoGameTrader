@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     def create 
         @user = User.create(user_params)
         session[:user_id] = @user.id
-        redirect_to "/users/#{@user.id}"
+        redirect_to user_path(@user)
     end
 
     def edit 
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     def update 
         @user = User.find(params[:id])
         @user.update(user_params)
-        redirect_to "/users/#{@user.id}"
+        redirect_to user_path(@user)
     end
 
     def destroy
@@ -57,7 +57,7 @@ class UsersController < ApplicationController
         @user2_new_game = UserVideoGame.create(user_id: session[:user2]["id"], game_id: params[:user_video_games][:game_id])
         @first_users_game.destroy
         @second_users_game.destroy
-        redirect_to "/users/#{session[:user_id]}"
+        redirect_to user_path(session[:user_id])
     end 
 
     private 

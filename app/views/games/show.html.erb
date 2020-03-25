@@ -1,7 +1,7 @@
 <div class="headerbg">
 <h1><%= @game.title %> </h1>
 </div>
-<%= button_to 'Home', "/users/#{session[:user_id]}",:class => "showbtn2", method: :get %>
+<%= button_to 'Home', user_path(session[:user_id]),:class => "showbtn2", method: :get %>
 <% if @game.rating > 7.9 %>
     <h3>is currently one of the hottest games!</h3>
 <% end %>

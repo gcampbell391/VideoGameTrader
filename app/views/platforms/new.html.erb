@@ -1,7 +1,7 @@
 <div class="headerbg">
 <h1> Add a platform, <%=@user.name%> </h1>
 </div>
-<%= form_for(@platform, url:"/#{@user.id}/platformadded") do |f|%>
+<%= form_for(@platform) do |f|%>
 <%= collection_select :user_platform, :platform_id, Platform.all, :id, :name %> <br>
 <%=f.submit "Add Platform", :class => "showbtn2"%>
 <%end%>

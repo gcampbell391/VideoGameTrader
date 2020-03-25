@@ -1,7 +1,8 @@
+<div class="headerbg">
 <h1>Trades Game with <%= @user2.name %></h1>
-
+</div>
 <%= form_tag("/finalizetrade/", method: "post") do %>
-<label>Select the game you would like to trade: </label>
+<label>Select the game you would like to trade: </label><br>
 <%= collection_select :user_video_games, :game_id, @user1.games, :id, :title %> <br><br>
-<%= submit_tag("Trade Game") %><br>
+<%= submit_tag "Trade Game", :class => "showbtn1", method: :get %><br>
 <% end %>

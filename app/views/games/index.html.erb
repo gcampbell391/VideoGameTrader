@@ -1,7 +1,7 @@
 <div class="headerbg">
 <h1>Games Homepage</h1>
 </div>
-<%= button_to 'Home', "/users/#{session[:user_id]}",:class => "showbtn1", method: :get %>
+<%= button_to 'Home', user_path(session[:user_id]),:class => "showbtn1", method: :get %>
 
 <div class="gameStats">
 <h3>Best Game: </h3>
@@ -21,6 +21,7 @@
 <h2>All Games</h2>
 
 <table style="width:100%">
+<caption>Inventory: <%= Game.total_games %> Games</caption>
     <tr>
         <th>Title</th>
         <th>Genre</th>
@@ -30,7 +31,7 @@
     </tr>
     <% @games.each do |game| %>
     <tr>
-        <td><%= link_to game.title, "/games/#{game.id}"%> </td>
+        <td><%= link_to game.title, game_path(game)%> </td>
         <td><%= game.genre %> </td>
         <td><%= game.release_year %> </td>
         <td><%= game.rating %></td>

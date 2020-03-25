@@ -1,13 +1,13 @@
 <div class="headerbg">
 <h1><%= @platform.name%> Home Page</h1>
 </div>
-<%= button_to 'Home', "/users/#{session[:user_id]}", :class => "showbtn1", method: :get  %>
+<%= button_to 'Home', user_path(session[:user_id]), :class => "showbtn1", method: :get  %>
 
 <h3>Users who own this platform:</h3>
 <div class= "plaformshowbox">
  <ul>
     <% @platform.user_platforms.each do |up|%>
-        <li><%= link_to up.user.name, "/users/#{up.user.id}" %> </li><br>
+        <li><%= link_to up.user.name, user_path(up.user) %> </li><br>
 <% end%>
     </ul>
 </div>

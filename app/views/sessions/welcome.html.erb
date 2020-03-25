@@ -1,9 +1,10 @@
 <div class="headerbg">
-<h1>Welcome to Video Game Trader</h1>
+<h1>Welcome to Trade Trade City</h1>
 </div>
+<p>The ultimate video game trading center</p>
 <h3>Returning Users Log in Here</h3>
 <%=button_to "Log In", '/login', :class => "welcomebtn", method: :get %>
 <h4>New Users Sign Up Here</h4>
-<%=button_to "New User", '/signup',:class => "welcomebtn", method: :get %>
+<%=button_to "New User", new_user_path,:class => "welcomebtn", method: :get %>
 
 

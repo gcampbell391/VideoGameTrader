@@ -31,9 +31,3 @@
 
 
 en:
-activerecord:
-models:
-order: "Order"
-attributes:
-order:
-name: "Name"
