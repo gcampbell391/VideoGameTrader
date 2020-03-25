@@ -4,6 +4,8 @@ class User < ApplicationRecord
     has_many :games, through: :user_video_games
     has_many :user_platforms
     has_many :platforms, through: :user_platforms
+    validates_presence_of :user_name, :message => '^You must enter a user name!' 
+    validates_presence_of :password, :message => '^You must enter a password!' 
 
 
     def video_game_count 

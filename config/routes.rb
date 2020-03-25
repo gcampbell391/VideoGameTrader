@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   get '/games', to: 'games#index'
   get '/games/:id', to: 'games#show'
 
+  resources :users do 
+    resources :games
+    resources :platforms
+  end
   #Welcome
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'

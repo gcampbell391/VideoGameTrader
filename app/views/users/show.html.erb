@@ -11,6 +11,7 @@
     <li>Address: <%= @user.address %></li>
     <li>Email: <%= @user.email %></li>
 </ul>
+
 <%= button_to "Edit Info", "/users/#{@user.id}/edit",:class => "showbtn1", method: :get %><br>
 <%= button_to "Destroy Account", "/users/#{@user.id}/destroy",:class => "showbtn2", method: :delete %><br>
 <%= button_to "Log Out", "/logout",:class => "showbtn1", method: :get %>

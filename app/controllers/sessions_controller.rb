@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
         session[:user_id] = @user.id
         redirect_to "/users/#{@user.id}"
       else
+        flash[:notice] = "Please make sure you use a valid username and password!"
         redirect_to '/login'
       end
   end

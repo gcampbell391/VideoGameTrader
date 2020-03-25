@@ -234,3 +234,29 @@
             margin-right: 90px;
             float: left;
         }
+        
+        .notice {
+            padding-top: 20px;
+            color: white;
+            font-size: 30px;
+            text-align: center;
+            animation: blinkingText 1.2s infinite;
+        }
+        
+        @keyframes blinkingText {
+            0% {
+                color: white;
+            }
+            49% {
+                color: white;
+            }
+            60% {
+                color: transparent;
+            }
+            99% {
+                color: transparent;
+            }
+            100% {
+                color: white;
+            }
+        }

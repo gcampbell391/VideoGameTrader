@@ -1,6 +1,9 @@
 <div class="headerbg">
 <h1>Existing User Log-In</h1>
 </div>
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+<% end %>
 <%= form_tag '/login' do %>
     <%= label_tag :user_name%><br>
     <%= text_field_tag :user_name %><br>
