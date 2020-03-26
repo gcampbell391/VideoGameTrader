@@ -27,4 +27,7 @@ post "/finalizetrade", to: 'users#complete_trade'
 #Route for adding User game
 post "/:id/gameadded", to: 'games#create'
 
+#Route to alter user trade status
+post "/tradestatus/:id", to: 'users#trade_status'
+
 end 

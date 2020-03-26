@@ -60,6 +60,17 @@ class UsersController < ApplicationController
         redirect_to user_path(session[:user_id])
     end 
 
+    def trade_status 
+        @user_game = UserVideoGame.find(params[:id])
+        if @user_game.tradeable == false 
+            @user_game.tradeable = true
+        else
+            @user_game.tradeable = false
+        end
+        @user_game.save
+        redirect_to user_path(session[:user_id])
+    end
+
     private 
     
     def user_params

@@ -6,7 +6,13 @@ class User < ApplicationRecord
     has_many :platforms, through: :user_platforms
     validates_presence_of :user_name, :message => '^You must enter a user name!' 
     validates_presence_of :password, :message => '^You must enter a password!' 
+    validates_presence_of :email
+    validates_presence_of :address
 
+
+    def self.total_users
+        User.all.count
+    end
 
     def video_game_count 
         self.user_video_games.count
@@ -52,5 +58,22 @@ class User < ApplicationRecord
         newArray
     end
 
+    def wants_to_trade_count
+        count = 0
+        if self.user_video_games 
+            self.user_video_games.each do |uvg|
+                if uvg.tradeable == true
+                    count += 1
+                end
+            end
+        end
+        count
+    end 
     
+
+    def membership_time
+        self.created_at.strftime("%Y-%m-%d")
+    end
+
+
 end

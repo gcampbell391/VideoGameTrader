@@ -3,6 +3,11 @@ class Game < ApplicationRecord
     has_many :users, through: :user_video_games
     has_many :video_game_platforms
     has_many :platforms, through: :video_game_platforms
+    validates_presence_of :title
+    validates_presence_of :genre 
+    validates_presence_of :rating 
+    validates_presence_of :release_year
+    validates_presence_of :completion_time
 
 
     def self.total_games
@@ -49,4 +54,5 @@ class Game < ApplicationRecord
         end
         newArray
     end
+
 end 

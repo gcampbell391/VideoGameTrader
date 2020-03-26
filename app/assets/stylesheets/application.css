@@ -23,6 +23,7 @@
             font-family: Luminari, fantasy;
             margin-left: 500px;
             margin-right: 500px;
+            animation: blinkingText 1.2s infinite;
         }
         
         .headerbg {
@@ -148,9 +149,18 @@
         table,
         th,
         td {
-            border: 2px solid #66ccff;
+            border: 2px solid #6bff66;
             text-align: center;
-            color: white;
+            color: #66ccff;
+            background-color: white;
+        }
+        
+        th {
+            font-size: 30px;
+        }
+        
+        td {
+            font-size: 20px;
         }
         
         p {
@@ -204,6 +214,24 @@
             border-radius: 25px;
         }
         
+        .statusbtn {
+            text-align: center;
+            font-size: 15px;
+            width: 40%;
+            background: #6bff66;
+            color: black;
+            border-radius: 25px;
+        }
+        
+        .statusbtn:hover {
+            text-align: center;
+            font-size: 15px;
+            width: 40%;
+            background: #66ccff;
+            color: black;
+            border-radius: 25px;
+        }
+        
         .platformtext {
             color: white
         }
@@ -224,12 +252,12 @@
         
         .showrightside {
             float: right;
-            padding-right: 200px;
+            padding-right: 150px;
             padding-top: 30px;
         }
         
         .showbottom {
-            padding-left: 140px;
+            padding-left: 100px;
             margin-top: 100px;
             margin-right: 90px;
             float: left;
@@ -250,20 +278,27 @@
             animation: blinkingText 1.2s infinite;
         }
         
+        label {
+            font-size: 15px;
+        }
+        
         @keyframes blinkingText {
             0% {
-                color: white;
+                color: red;
             }
-            49% {
-                color: white;
+            20% {
+                color: yellowgreen;
+            }
+            40% {
+                color: #6bff66;
             }
             60% {
-                color: transparent;
+                color: #66dbff;
             }
-            99% {
-                color: transparent;
+            80% {
+                color: royalblue;
             }
             100% {
-                color: white;
+                color: blueviolet;
             }
         }

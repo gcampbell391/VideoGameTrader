@@ -3,6 +3,7 @@
 </div>
 <%= button_to 'Home', user_path(session[:user_id]),:class => "showbtn2", method: :get  %>
 <ul>
+<h3>Most Popular Platform: <%= Platform.most_popular %></h3>
 <% @platforms.each do |platform| %>
 <h2><%= button_to platform.name, platform_path(platform), :class => "platformsbtn", method: :get%></h2>
 <div class= "platformtext">

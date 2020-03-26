@@ -1,10 +1,16 @@
 <div class="headerbg">
-<h1>Welcome to Trade Trade City</h1>
+<h1>Welcome to Trade Trade City </h1>
 </div>
-<p>The ultimate video game trading center</p>
+<p>The Ultimate Online Video Game Trading Center</p>
+
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
 <h3>Returning Users Log in Here</h3>
 <%=button_to "Log In", '/login', :class => "welcomebtn", method: :get %>
 <h4>New Users Sign Up Here</h4>
+<p>Not a Member? Join Today. If you join we will have over <%= User.total_users%> members!</p>
 <%=button_to "New User", new_user_path,:class => "welcomebtn", method: :get %>
 
 

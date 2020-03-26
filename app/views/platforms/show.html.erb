@@ -3,7 +3,7 @@
 </div>
 <%= button_to 'Home', user_path(session[:user_id]), :class => "showbtn1", method: :get  %>
 
-<h3>Users who own this platform:</h3>
+<h3><%= @platform.total_owners%> members own this platform:</h3>
 <div class= "plaformshowbox">
  <ul>
     <% @platform.user_platforms.each do |up|%>

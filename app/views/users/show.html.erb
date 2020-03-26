@@ -10,6 +10,7 @@
     <li>Name: <%= @user.name %></li>
     <li>Address: <%= @user.address %></li>
     <li>Email: <%= @user.email %></li>
+    <li>Member Since: <%= @user.membership_time %></li>
 </ul>
 
 <%= button_to "Edit Info", edit_user_path(@user), :class => "showbtn1", method: :get %><br>
@@ -20,6 +21,7 @@
 
 <div class="showrightside">
 <h3><%= @user.name %> owns this many games: <%= @user.video_game_count %></h3>
+<h4><%= @user.wants_to_trade_count %> of their games are available for trade.</h4>
 <%= button_to "All Games", games_path ,:class => "showbtn1", method: :get %><br>
 <%= button_to "Add Game", new_user_game_path(@user),:class => "showbtn2", method: :get %> <br>
 <%= button_to "Remove Game", edit_game_path(),:class => "showbtn1", method: :get %>
@@ -28,10 +30,9 @@
     <h3>Current Collection</h3>
     <ul>
     <% @user.user_video_games.each do |uvg|%>
-        <li><%= link_to uvg.game.title, game_path(uvg.game) %><br>
-            <ul>
-                <li>Up For Trade? <%= uvg.yes_or_no %></li><br>
-            </ul>
+        <li><%= link_to uvg.game.title, game_path(uvg.game) %><br></li>
+            <label>Up For Trade? <%= uvg.yes_or_no %></label>
+            <%= button_to "Change Status", "/tradestatus/#{uvg.id}" ,:class => "statusbtn", method: :post %><br>
 <% end%>
     </ul>
 <% end %>

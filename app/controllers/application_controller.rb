@@ -12,6 +12,9 @@ helper_method :logged_in?
     end
 
     def authorized
-        redirect_to '/welcome' unless logged_in?
+        unless logged_in?
+            flash[:notice] = "You must be logged in first!!!"
+            redirect_to '/welcome' 
+        end
     end
 end
