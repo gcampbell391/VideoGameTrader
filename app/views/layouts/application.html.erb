@@ -7,6 +7,13 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <ul class="navbar">
+        <li class = "li"><a class = "lia" href="users/<%= session[:user_id]%> ">Home</a></li>
+        <li class = "li"><a class = "lia" href="/games">Games</a></li>
+        <li class = "li"><a class = "lia" href="/platforms">Platforms</a></li>
+        <li class = "li"><a class = "lia" href="/users">Available Trades</a></li>
+        <li style="float:right" class = "li"><a class="liao" href="/logout">Log Out</a></li>
+      </ul>
   </head>
 
   <body>

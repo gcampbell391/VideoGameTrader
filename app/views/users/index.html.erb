@@ -2,7 +2,6 @@
 <h1>All Users Looking to Trade</h1>
 </div>
 <h2>Our Current Top Gamer: <%= User.biggest_gamer %></h2>
-<%= button_to 'Home', user_path(session[:user_id]),:class => "showbtn2", method: :get %>
 <div class="gametradebox">
 <% @users.each do |user| %>
     <% if user.wants_to_trade == true %>

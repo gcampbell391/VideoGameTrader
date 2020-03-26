@@ -1,8 +1,6 @@
 <div class="headerbg">
 <h1><%= @platform.name%> Home Page</h1>
 </div>
-<%= button_to 'Home', user_path(session[:user_id]), :class => "showbtn1", method: :get  %>
-
 <h3><%= @platform.total_owners%> members own this platform:</h3>
 <div class= "plaformshowbox">
  <ul>
@@ -11,5 +9,3 @@
 <% end%>
     </ul>
 </div>
-    <%= button_to "All Platforms", platforms_path,:class => "showbtn2", method: :get  %>
-

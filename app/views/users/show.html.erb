@@ -15,14 +15,12 @@
 
 <%= button_to "Edit Info", edit_user_path(@user), :class => "showbtn1", method: :get %><br>
 <%= button_to "Destroy Account",user_path(@user), :class => "showbtn2", method: :delete %><br>
-<%= button_to "Log Out", "/logout",:class => "showbtn1", method: :get %>
 </div>
 
 
 <div class="showrightside">
 <h3><%= @user.name %> owns this many games: <%= @user.video_game_count %></h3>
 <h4><%= @user.wants_to_trade_count %> of their games are available for trade.</h4>
-<%= button_to "All Games", games_path ,:class => "showbtn1", method: :get %><br>
 <%= button_to "Add Game", new_user_game_path(@user),:class => "showbtn2", method: :get %> <br>
 <%= button_to "Remove Game", edit_game_path(),:class => "showbtn1", method: :get %>
 
@@ -36,14 +34,12 @@
 <% end%>
     </ul>
 <% end %>
-<%= button_to "Looking For Trades?", users_path ,:class => "showbtn2", method: :get %><br>
 </div>
 
 
 <div class="showbottom">
 <h3><%= @user.name %> owns this many platforms: <%= @user.platform_count %></h3>
 
-<%= button_to "All Platforms", platforms_path ,:class => "showbtn1", method: :get %><br>
 <%= button_to "Add Platform", new_user_platform_path(@user),:class => "showbtn2", method: :get %><br>
 <%= button_to "Remove Platform", edit_platform_path(),:class => "showbtn1", method: :get %>
 

@@ -27,6 +27,9 @@
         }
         
         .headerbg {
+            margin-top: -20px;
+            margin-left: -20px;
+            margin-right: -20px;
             padding-top: 30px;
             padding-bottom: 30px;
             background-image: url(mod2image2.jpeg);
@@ -191,7 +194,25 @@
             text-align: center;
             font-size: 20px;
             width: 80%;
-            background: red;
+            background: tomato;
+            color: white;
+            border-radius: 25px;
+        }
+        
+        .tradegames:hover {
+            text-align: center;
+            font-size: 20px;
+            width: 80%;
+            background: tomato;
+            color: white;
+            border-radius: 25px;
+        }
+        
+        .tradegames2:hover {
+            text-align: center;
+            font-size: 20px;
+            width: 80%;
+            background: #6bff66;
             color: white;
             border-radius: 25px;
         }
@@ -301,4 +322,41 @@
             100% {
                 color: blueviolet;
             }
+        }
+        
+        .navbar {
+            list-style-type: none;
+            margin-right: -10px;
+            margin-left: -10px;
+            margin-top: -10px;
+            overflow: hidden;
+            background-color: black
+        }
+        
+        .li {
+            float: left;
+        }
+        
+        .lia {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        
+        .liao {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        
+        .lia:hover:not(.active) {
+            background-color: #66dbff;
+        }
+        
+        .liao:hover:not(.active) {
+            background-color: tomato;
         }

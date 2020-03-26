@@ -1,7 +1,6 @@
 <div class="headerbg">
 <h1> All Platforms </h1>
 </div>
-<%= button_to 'Home', user_path(session[:user_id]),:class => "showbtn2", method: :get  %>
 <ul>
 <h3>Most Popular Platform: <%= Platform.most_popular %></h3>
 <% @platforms.each do |platform| %>
