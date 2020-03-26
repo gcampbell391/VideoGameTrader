@@ -14,6 +14,8 @@ get 'login', to: 'sessions#new'
 post 'login', to: 'sessions#create'
 get "/logout", to: 'users#logout'
 
+get "/users/users/:id", to: "users#show"
+
 #Remove User Platform
 post "/deleteplatform", to: 'platforms#delete'
 

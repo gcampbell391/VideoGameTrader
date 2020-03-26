@@ -144,9 +144,23 @@
             color: white;
         }
         
-        .gameStats {
+        .gameStatsLeft {
             color: white;
-            text-align: center;
+            text-align: left;
+            margin-left: 400px;
+        }
+        
+        .gameStatsRight {
+            color: white;
+            text-align: right;
+            margin-right: 400px;
+            margin-top: -320px;
+        }
+        
+        h2 {
+            color: #00cc00;
+            font-size: 30px;
+            font-family: Luminari, fantasy;
         }
         
         table,

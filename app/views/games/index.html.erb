@@ -2,22 +2,23 @@
 <h1>Games Homepage</h1>
 </div>
 
-<div class="gameStats">
-<h3>Best Game: </h3>
+<div class="gameStatsLeft">
+<h2>Best Game: </h2>
 <%= Game.highest_rating%>
-<h3>Worst Game: </h3>
+<h2>Worst Game: </h2>
 <%= Game.worst_rating %>
-<h3>Longest Game: </h3>
+<h2>Longest Game: </h2>
 <%= Game.longest %>
-<h3>Shortest Game: </h3>
+</div>
+<div class="gameStatsRight">
+<h2>Shortest Game: </h2>
 <%= Game.shortest %>
-<h3>Newest Game: </h3>
+<h2>Newest Game: </h2>
 <%= Game.newest %>
-<h3>Oldest Game: </h3>
+<h2>Oldest Game: </h2>
 <%= Game.oldest %>
 </div>
 
-<h2>All Games</h2>
 
 <table style="width:100%">
 <caption>Inventory: <%= Game.total_games %> Games</caption>
