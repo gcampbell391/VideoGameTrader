@@ -29,7 +29,7 @@
         <th>Rating</th>
         <th>Completion Time</th>
     </tr>
-    <% @games.each do |game| %>
+    <% @games.sort_by{|game|game.title}.each do |game| %>
     <tr>
         <td><%= link_to game.title, game_path(game)%> </td>
         <td><%= game.genre %> </td>

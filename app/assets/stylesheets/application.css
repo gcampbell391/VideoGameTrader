@@ -374,3 +374,7 @@
         .liao:hover:not(.active) {
             background-color: tomato;
         }
+        
+        .footer {
+            font-size: 10px;
+        }

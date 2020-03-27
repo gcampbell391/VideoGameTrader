@@ -13,7 +13,7 @@ User.destroy_all
 
 
 puts "Creating Games..."
-50.times do 
+100.times do 
     Game.create(title: Faker::Game.title, genre: Faker::Game.genre, release_year: Faker::Date.birthday(min_age: 1, max_age: 50), rating: Faker::Number.decimal(l_digits: 1, r_digits: 1), completion_time: Faker::Number.between(from: 4, to: 40))
 end
 
@@ -29,7 +29,9 @@ switch = Platform.create(name: "Nitendo Switch", release_year: 2017)
 puts "Creating Users"
 
 10.times do 
-    User.create(name: Faker::Movies::HarryPotter.character, user_name:Faker::Movies::HarryPotter.spell, address: Faker::Movies::HarryPotter.location, email: Faker::Internet.email, password_digest: BCrypt::Password.create('Your_Password'))
+    user1 = User.new(name: Faker::Movies::HarryPotter.character, user_name:Faker::Movies::HarryPotter.spell, address: Faker::Movies::HarryPotter.location, email: Faker::Internet.email)
+    user1.password = 'password'
+    user1.save!
 end
 
 puts "Creating User Video Games..."
